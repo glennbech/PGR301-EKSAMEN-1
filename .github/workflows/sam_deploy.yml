@@ -45,6 +45,11 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main'
     steps:
+    
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        
+        
       - name: Debug Working Directory
         run: |
           pwd
