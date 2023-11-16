@@ -5,19 +5,17 @@ on:
       - main
       - '*'
 jobs:
- # build:
-  #  name: Build Docker Image
-   # runs-on: ubuntu-latest
+  #build:
+    #name: Build Docker Image
+    #runs-on: ubuntu-latest
     #if: github.ref == 'refs/heads/main'
     #steps:
-     # - name: Check out the repo
-      #  uses: actions/checkout@v4
+      #- name: Check out the repo
+        #uses: actions/checkout@v4
         
-     # - name: Build Docker Image
-      #  run: | 
-           
-           
-           
+      #- name: Build Docker Image
+        #run: |
+        
   push_to_registry:
     name: Push Docker image to ECR
     runs-on: ubuntu-latest
