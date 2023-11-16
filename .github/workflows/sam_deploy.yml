@@ -34,6 +34,9 @@ jobs:
       - name: Build SAM Application
         run: sam build --use-container
 
+
+  # Error: Failed to create changeset for the stack: sam-candidate-2039, An error occurred (ValidationError) when calling the CreateChangeSet operation: 
+  # Stack:arn:aws:cloudformation:eu-west-1:***:stack/sam-candidate-2039/3edfabe0-849a-11ee-ba17-0226988f648f is in ROLLBACK_COMPLETE state and can not be updated.
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -58,4 +61,3 @@ jobs:
       
       - name: Deploy SAM Application
         run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-candidate-2039 --s3-bucket candidate-2039 --capabilities CAPABILITY_IAM --region eu-west-1
-        shell: bash
