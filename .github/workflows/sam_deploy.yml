@@ -8,6 +8,7 @@ on:
 
 defaults:
   run:
+   #TODO : rootfile is duplicated in workflow
     working-directory: "kjell"
 
 jobs:
@@ -29,6 +30,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
+          
+      - name: Debug Working Directory
+        run: |
+          pwd
+          ls -la    
+      
 
       - name: Build SAM Application
         run: sam build --use-container
