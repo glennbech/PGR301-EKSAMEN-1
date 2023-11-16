@@ -8,7 +8,7 @@ on:
 
 defaults:
   run:
-    working-directory: "./kjell"
+    working-directory: "kjell"
 
 jobs:
   build:
@@ -40,3 +40,4 @@ jobs:
     steps:
       - name: Deploy SAM Application
         run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-candidate-2039 --s3-bucket candidate-2039 --capabilities CAPABILITY_IAM --region eu-west-1
+        shell: bash
