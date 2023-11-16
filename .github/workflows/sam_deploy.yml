@@ -38,6 +38,10 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main'
     steps:
+      - name: Debug Working Directory
+        run: |
+          pwd
+          ls -la
       - name: Deploy SAM Application
         run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-candidate-2039 --s3-bucket candidate-2039 --capabilities CAPABILITY_IAM --region eu-west-1
         shell: bash
