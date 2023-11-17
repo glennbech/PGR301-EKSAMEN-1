@@ -1,5 +1,5 @@
 resource "aws_apprunner_service" "service" {
-  service_name = "kjell-is-king"
+  service_name = ${var.service_name}
 
   instance_configuration {
     instance_role_arn = aws_iam_role.role_for_apprunner_service.arn
