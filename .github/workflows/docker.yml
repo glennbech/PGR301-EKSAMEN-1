@@ -44,6 +44,7 @@ jobs:
     env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          working-directory: ./infra
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -53,10 +54,12 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: ${{env.working-directory}}
 
       - name: Terraform Plan
         run: terraform plan
         continue-on-error: true
+        working-directory: ${{env.working-directory}}
 
       - name: Terraform Plan Status
         if: steps.plan.outcome == 'failure'
@@ -64,3 +67,4 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply --auto-approve
+        working-directory: ${{env.working-directory}}
