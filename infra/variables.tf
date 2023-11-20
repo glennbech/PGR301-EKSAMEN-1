@@ -1,5 +1,6 @@
 variable "service_name"{
     type = string
+    default = "apprunner-2039"
 }
 
 variable "port"{
@@ -20,12 +21,12 @@ variable "image_repository_type"{
 
 variable "iam_role_name"{
     type = string
-    default = "kjell-role-thingy"
+    default = "2039-role-thingy"
 }
 
 variable "policy_name"{
     type = string
-    default = "kjell-apr-policy-thingy"
+    default = "2039-apr-policy-thingy"
 }
 
 variable "policy_description"{
