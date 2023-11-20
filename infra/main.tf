@@ -1,5 +1,5 @@
 resource "aws_apprunner_service" "service" {
-  service_name = ${var.service_name}
+  service_name =var.service_name
 
   instance_configuration {
     instance_role_arn = aws_iam_role.role_for_apprunner_service.arn
@@ -11,17 +11,17 @@ resource "aws_apprunner_service" "service" {
     }
     image_repository {
       image_configuration {
-        port = ${var.port}
+        port = var.port
       }
-      image_identifier      = ${var.image_identifier}
-      image_repository_type = ${var.image_repository_type}
+      image_identifier      = var.image_identifier
+      image_repository_type = var.image_repository_type
     }
     auto_deployments_enabled = true
   }
 }
 
 resource "aws_iam_role" "role_for_apprunner_service" {
-  name               = ${var.iam_role_name}
+  name               = var.iam_role_name
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
@@ -60,8 +60,8 @@ data "aws_iam_policy_document" "policy" {
 }
 
 resource "aws_iam_policy" "policy" {
-  name        = ${var.policy_name}
-  description = ${var.policy_description}
+  name        = var.policy_name
+  description = var.policy_description
   policy      = data.aws_iam_policy_document.policy.json
 }
 
