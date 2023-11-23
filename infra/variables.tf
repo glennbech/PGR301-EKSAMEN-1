@@ -5,7 +5,7 @@ variable "service_name"{
 
 variable "image_identifier"{
     type = string
-    default = "244530008913.dkr.ecr.eu-west-1.amazonaws.com/testing"
+    default = "244530008913.dkr.ecr.eu-west-1.amazonaws.com/2039-ecr-repo"
 }
 
 variable "iam_role_name"{
