@@ -1,8 +1,10 @@
 resource "aws_apprunner_service" "service" {
-  service_name =var.service_name
+  service_name = var.service_name
 
   instance_configuration {
     instance_role_arn = aws_iam_role.role_for_apprunner_service.arn
+    cpu               = 256
+    memory            = 1024
   }
 
   source_configuration {
@@ -11,10 +13,10 @@ resource "aws_apprunner_service" "service" {
     }
     image_repository {
       image_configuration {
-        port = var.port
+        port = "8080"
       }
-      image_identifier      = var.image_identifier
-      image_repository_type = var.image_repository_type
+      image_identifier      = "${var.image_identifier}:latest"
+      image_repository_type = "ECR"
     }
     auto_deployments_enabled = true
   }
@@ -70,4 +72,3 @@ resource "aws_iam_role_policy_attachment" "attachment" {
   role       = aws_iam_role.role_for_apprunner_service.name
   policy_arn = aws_iam_policy.policy.arn
 }
-

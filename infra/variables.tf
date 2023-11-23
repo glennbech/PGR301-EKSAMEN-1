@@ -3,20 +3,9 @@ variable "service_name"{
     default = "apprunner-2039"
 }
 
-variable "port"{
-    type = number
-    default = 8080
-    
-}
-
 variable "image_identifier"{
     type = string
-    default = "244530008913.dkr.ecr.eu-west-1.amazonaws.com/2039-ecr-repo:latest"
-}
-
-variable "image_repository_type"{
-    type = string
-    default = "ECR"
+    default = "244530008913.dkr.ecr.eu-west-1.amazonaws.com/testing"
 }
 
 variable "iam_role_name"{
