@@ -34,7 +34,10 @@ jobs:
           rev=$(git rev-parse --short HEAD)
           docker build . -t 2039-ppe
           docker tag 2039-ppe 244530008913.dkr.ecr.eu-west-1.amazonaws.com/2039-ecr-repo:$rev
+          docker tag 2039-ppe 244530008913.dkr.ecr.eu-west-1.amazonaws.com/2039-ecr-repo:latest
           docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/2039-ecr-repo:$rev
+          docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/2039-ecr-repo:latest
+          
           
   terraform:
     name: "Terraform Apply"
