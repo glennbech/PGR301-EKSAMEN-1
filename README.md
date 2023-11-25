@@ -29,3 +29,20 @@ Et annet problem utviklere hadde før dette konseptet kom, var at kode kun ble p
 
 Kontinuerlig Integrasjon i praksis vil man ofte sette opp Branch Protection Rules for sin main branch. Disse reglene vil ofte innebære at man må 
 lage en pull-request for å merge ny kode fra en isolert sub-branch. Etter pull-requesten har blitt laget, må alle workflow jobbene kjøre uten problemer. Det er også vanlig at en eller flere andre utviklere må godkjenne pull-requesten (flere hoder er bedre enn ett).
+
+
+### B
+
+* Scrum
+Scrum er Programvareutvikling metodikk som fremmer kommunikasjon mellom utviklere og produkteier. Scrum er hensiktsmessig dersom krav og kriterier for et produkt ikke er godt definert. Utviklingsteamet jobber i Sprints. En sprint vil i Scrum gå i rekkefølgen:  planlegge sprint -> jobbe med utvikling -> evaluering av sprint. Dette oppsettet gjør at teamet kommuniserer jevnlig og
+konstant kan drøfte og evaluere om fremgangsmåten fungerer eller ikke, og gjøre justeringer deretter. I scrum har man en backlog som definerer kriterier for applikasjonen og gir dem poeng etter vanskelighetsgrad. Denne backloggen er åpen for endring, dersom en oppgave er for kompleks, kan man justere og dele den opp i flere mindre oppgaver, og om en oppgave viser seg å være mer kompleks
+enn forutsett, kan poengene justeres opp.
+Fordeler med bruk av scrum i en utviklingsprosess er at den er veldig mottakelig mot endringer. I en utviklingsprosess kan priotiteter og ønsker endre seg fort, og da gir Scrum et godt utgangspunkt for dette.
+Når man jobber med større prosjekter kan det være vanskelig å vite hvor man skal starte og hvilke oppgaver man skal prioritere over andre. Planleggingen i scrum hjelper med å løse dette. I Backloggen så rangerer man de forskjellige oppgavene etter prioritet.
+Siden scrum fremmer kommunikasjon innad i team, og oppfordrer kreativ innputt, kan større team 
+
+
+* DevOps
+DevOps er en metodikk som fremmer kommunikasjon mellom Developers og Operations, konseptet innfører "Skin in the game". Før DevOps jobbet utviklere og operations isolert. Disse to rollene er ikke
+alltid på samme side. Utviklerene ønsker å skrive og pushe kode så fort som mulig, mens operations kan møte på problemer dersom sikkerhetstiltak ikke er tatt før man lanserer endringene. Om applikasjonen feiler, havner det i hendene til operations, utviklerene hadde derfor ikke noe insentiv til å skrive bedre kode. Men med DevOps jobber disse to rollene sammen med delt ansvar og konsekvenser. Skin in the game oppfordrer utviklerene å skrive bedre kode, for de deler konsekvensene hvis det oppstår feil.
+
