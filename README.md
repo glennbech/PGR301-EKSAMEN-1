@@ -80,6 +80,6 @@ DevOps har flere fordeler. I den teknologisk utviklende verden som vi lever i, e
 
 ### Scrum vs DevOps; Forskjeller og likheter
 
-
+DevOps og Scrum har både forskjeller og likheter når det kommer til utviklingsprosess. Begge søker etter å effektivisere utvikling. Men deres tilnærming til hvordan dette gjøres er forskjellige. Scrum fokuserer på Team kommunikasjon og interaksjon, 
 
 
