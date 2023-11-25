@@ -1,10 +1,28 @@
 # PGR301-EKSAMEN
 Eksamen DevOps PGR301 - 2023
 
+** OBS! For at workflows skal kjøre korrekt i sensor sin fork må det i Settings -> Secrets & Variables -> actions opprettes 2 variabler: AWS_ACCESS_KEY_ID & AWS_ACCESS_KEY_ID. Disse verdiene kan 
+genereres i AWS IAM (selv om du allerede vet det)
+
 ## Oppgave 1
 
 
 ## Oppgave 2
+
+
+```
+docker build -t ppe . 
+docker run -p 8080:8080 -e AWS_ACCESS_KEY_ID=XXX -e AWS_SECRET_ACCESS_KEY=YYY -e BUCKET_NAME=kjellsimagebucket ppe
+```
+
+for å bygge og kjøre applikasjonen med docker kan kommandoene over kjøres i rot terminalen. Kombinert med
+
+```
+http://localhost:8080/scan-ppe?bucketName=kjellsimagebucket
+```
+vil responsen demonstrert i oppgaveteksten vises.
+
+
 
 
 ## Oppgave 3
