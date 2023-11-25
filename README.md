@@ -34,6 +34,7 @@ lage en pull-request for å merge ny kode fra en isolert sub-branch. Etter pull-
 ### B
 
 * Scrum
+#
 Scrum er Programvareutvikling metodikk som fremmer kommunikasjon mellom utviklere og produkteier. Scrum er hensiktsmessig dersom krav og kriterier for et produkt ikke er godt definert. Utviklingsteamet jobber i Sprints. En sprint vil i Scrum gå i rekkefølgen:  planlegge sprint -> jobbe med utvikling -> evaluering av sprint. Dette oppsettet gjør at teamet kommuniserer jevnlig og
 konstant kan drøfte og evaluere om fremgangsmåten fungerer eller ikke, og gjøre justeringer deretter. I scrum har man en backlog som definerer kriterier for applikasjonen og gir dem poeng etter vanskelighetsgrad. Denne backloggen er åpen for endring, dersom en oppgave er for kompleks, kan man justere og dele den opp i flere mindre oppgaver, og om en oppgave viser seg å være mer kompleks
 enn forutsett, kan poengene justeres opp.
@@ -43,6 +44,7 @@ Siden scrum fremmer kommunikasjon innad i team, og oppfordrer kreativ innputt, k
 
 
 * DevOps
+#
 DevOps er en metodikk som fremmer kommunikasjon mellom Developers og Operations, konseptet innfører "Skin in the game". Før DevOps jobbet utviklere og operations isolert. Disse to rollene er ikke
 alltid på samme side. Utviklerene ønsker å skrive og pushe kode så fort som mulig, mens operations kan møte på problemer dersom sikkerhetstiltak ikke er tatt før man lanserer endringene. Om applikasjonen feiler, havner det i hendene til operations, utviklerene hadde derfor ikke noe insentiv til å skrive bedre kode. Men med DevOps jobber disse to rollene sammen med delt ansvar og konsekvenser. Skin in the game oppfordrer utviklerene å skrive bedre kode, for de deler konsekvensene hvis det oppstår feil.
 
