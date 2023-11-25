@@ -1,14 +1,13 @@
 # PGR301-EKSAMEN
 Eksamen DevOps PGR301 - 2023
 
-__OBS! For at workflows skal kjøre korrekt i sensor sin fork må det i Settings -> Secrets & Variables -> actions opprettes 2 variabler: AWS_ACCESS_KEY_ID & AWS_ACCESS_KEY_ID. Disse verdiene kan 
-genereres i AWS IAM (selv om du allerede vet det)
+**!OBS! For at workflows skal kjøre korrekt i sensor sin fork må det i Settings -> Secrets & Variables -> actions opprettes 2 variabler: AWS_ACCESS_KEY_ID & AWS_ACCESS_KEY_ID. Disse verdiene kan 
+genereres i AWS IAM (selv om sensor allerede vet det)**
 
-## Oppgave 1
+## Oppgave 1.
 
 
-## Oppgave 2
-
+## Oppgave 2.
 
 ```
 docker build -t ppe . 
@@ -23,17 +22,17 @@ http://localhost:8080/scan-ppe?bucketName=kjellsimagebucket
 vil responsen demonstrert i oppgaveteksten vises.
 
 
+## Oppgave 3.
 
 
-## Oppgave 3
 
 
-## Oppgave 4
+## Oppgave 4.
 
 
-## Drøfte Oppgaver:
+## Drøfte Oppgaver.
 
-### A
+### A.
 Kontinuerlig Intergrasjon er en praksis som er hyppig brukt innenfor DevOps området. Kontinuerlig Integrasjon har, med andre prakiser som
 Kontinuerlig Leveranse, et mål om å optimalisere utrulling av kodeendringer til en applikasjon. Konseptet går ut på å pushe kodeendringer jevnlig til kodebasen. Når man pusher ny kode eller kodeendringer til en applikasjon sitt repository, kan til tider føre til problemer. Den nye koden kan knekke noe i applikasjonen, og videre føre til problemer. Dette fenomenet er ikke uvanlig, og ved å pushe koden jevnlig vil man få innblikk
 i feilene raskt og effektivt.
@@ -49,7 +48,7 @@ Kontinuerlig Integrasjon i praksis vil man ofte sette opp Branch Protection Rule
 lage en pull-request for å merge ny kode fra en isolert sub-branch. Etter pull-requesten har blitt laget, må alle workflow jobbene kjøre uten problemer. Det er også vanlig at en eller flere andre utviklere må godkjenne pull-requesten (flere hoder er bedre enn ett).
 
 
-### B
+### B.
 
 #### Scrum
 Scrum er Programvareutvikling metodikk som fremmer kommunikasjon mellom utviklere og produkteier. Scrum er hensiktsmessig dersom krav og kriterier for et produkt ikke er godt definert. Utviklingsteamet jobber i Sprints. En sprint vil i Scrum gå i rekkefølgen:  planlegge sprint -> jobbe med utvikling -> evaluering av sprint. Dette oppsettet gjør at teamet kommuniserer jevnlig og
@@ -57,10 +56,30 @@ konstant kan drøfte og evaluere om fremgangsmåten fungerer eller ikke, og gjø
 enn forutsett, kan poengene justeres opp.
 Fordeler med bruk av scrum i en utviklingsprosess er at den er veldig mottakelig mot endringer. I en utviklingsprosess kan priotiteter og ønsker endre seg fort, og da gir Scrum et godt utgangspunkt for dette.
 Når man jobber med større prosjekter kan det være vanskelig å vite hvor man skal starte og hvilke oppgaver man skal prioritere over andre. Planleggingen i scrum hjelper med å løse dette. I Backloggen så rangerer man de forskjellige oppgavene etter prioritet.
-Siden scrum fremmer kommunikasjon innad i team, og oppfordrer kreativ innputt, kan større team 
+Siden scrum fremmer kommunikasjon innad i team, og oppfordrer kreativ innputt, kan større team være utfordrende. Det blir vanskeligere å komme til enighet. 
+
 
 #### DevOps
 
-DevOps er en metodikk som fremmer kommunikasjon mellom Developers og Operations, konseptet innfører "Skin in the game". Før DevOps jobbet utviklere og operations isolert. Disse to rollene er ikke
+DevOps er en metodikk som fremmer kommunikasjon mellom Developers og Operations, konseptet innfører "Skin in the game"(G. Bech 2023) Før DevOps jobbet utviklere og operations isolert. Disse to rollene er ikke
 alltid på samme side. Utviklerene ønsker å skrive og pushe kode så fort som mulig, mens operations kan møte på problemer dersom sikkerhetstiltak ikke er tatt før man lanserer endringene. Om applikasjonen feiler, havner det i hendene til operations, utviklerene hadde derfor ikke noe insentiv til å skrive bedre kode. Men med DevOps jobber disse to rollene sammen med delt ansvar og konsekvenser. Skin in the game oppfordrer utviklerene å skrive bedre kode, for de deler konsekvensene hvis det oppstår feil.
+I DevOps finnes det 3 hovedprinsipper:
+
+**Flyt** handler om at utviklingsprosessen skal flyte best mulig uten "waste", altså ting som hindrer effektiviteten til utvikling og kvaliteten til applikasjonen. Dette kan være blant annet: delvis ferdig arbeid, task switching, og venting. For å oppnå flyt tar man nytte av metoder som Kontinuerlig Integrering, Kontinuerlig Leveranse, Automatisering og Pipelines.
+
+**Feedback** handler om å få nyttig informasjon som kan hjelpe med forbedring av applikasjonen, fort, og gjøre noe med det. eks. 
+Problem:  flere brukere sliter får problemer når de prøver å sjekke ut handlekurven? 
+Feedback: tjenesten klarer ikke å prosessere så mange brukere på en gang. 
+Løsning: skaler tjenesten ut til å håndtere flere brukere.
+For å få god feedback for applikasjonen, tar man nytte av overvåkning, logging, metrikker.
+
+**Kontinuerlig Forbedring** handler om å lære hele tiden. Lærer man litt hver dag i et år, når man ser tilbake har man lært en hel del. I organisasjoner som har DevOps integrert i kulturen, har noen av de til og med dedikerte dager for utviklere å forbedre sine ferdigheter og/eller lære nye.
+
+DevOps har flere fordeler. I den teknologisk utviklende verden som vi lever i, endres trender hyppig, og nye teknologier kommer på banen. DevOps gir organisasjoner fleksibiliteten til å ikke falle bak disse trendene. I Devops verden har de "Blitz Dager" som er dager hvor utviklerene jobber med å gjøre større endringer, som for eksempel å bytte ut en teknologi med potensielt ny og bedre teknologi.
+
+
+### Scrum vs DevOps; Forskjeller og likheter
+
+
+
 
