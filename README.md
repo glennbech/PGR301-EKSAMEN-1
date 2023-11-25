@@ -1,7 +1,7 @@
 # PGR301-EKSAMEN
 Eksamen DevOps PGR301 - 2023
 
-**OBS! For at workflows skal kjøre korrekt i sensor sin fork må det i Settings -> Secrets & Variables -> actions opprettes 2 variabler: AWS_ACCESS_KEY_ID & AWS_ACCESS_KEY_ID. Disse verdiene kan 
+__OBS! For at workflows skal kjøre korrekt i sensor sin fork må det i Settings -> Secrets & Variables -> actions opprettes 2 variabler: AWS_ACCESS_KEY_ID & AWS_ACCESS_KEY_ID. Disse verdiene kan 
 genereres i AWS IAM (selv om du allerede vet det)
 
 ## Oppgave 1
