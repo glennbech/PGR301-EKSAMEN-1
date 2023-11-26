@@ -9,6 +9,8 @@ import com.amazonaws.services.s3.model.ListObjectsV2Result;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.example.s3rekognition.PPEClassificationResponse;
 import com.example.s3rekognition.PPEResponse;
+import io.micrometer.core.annotation.Timed;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +45,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
      * @param bucketName
      * @return
      */
+    @Timed(value = "scan_latency", description = "Latency of Scan")
     @GetMapping(value = "/scan-ppe", consumes = "*/*", produces = "application/json")
     @ResponseBody
     public ResponseEntity<PPEResponse> scanForPPE(@RequestParam String bucketName) {
@@ -73,10 +76,14 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
             // If any person on an image lacks PPE on the face, it's a violation of regulations
             boolean violation = isViolation(result);
+            if (violation){
+                meterRegistry.counter("violations").increment();
+            }
 
             logger.info("scanning " + image.getKey() + ", violation result " + violation);
             // Categorize the current image as a violation or not.
             int personCount = result.getPersons().size();
+            meterRegistry.counter("number_checked").increment(personCount);
             PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
             classificationResponses.add(classification);
         }

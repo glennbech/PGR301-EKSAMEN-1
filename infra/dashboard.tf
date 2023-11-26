@@ -13,7 +13,7 @@ resource "aws_cloudwatch_dashboard" "main" {
         "metrics": [
           [
             "${var.candidate_number}",
-            "violations_count.value"
+            "violations.value"
           ]
         ],
         "period": 300,
@@ -26,21 +26,21 @@ resource "aws_cloudwatch_dashboard" "main" {
     
     {
       "type": "metric",
-      "x": 0,
-      "y": 6,
+      "x": 12,
+      "y": 0,
       "width": 12,
       "height": 6,
       "properties": {
         "metrics": [
           [
             "${var.candidate_number}",
-            "bank_sum.value"
+            "number_checked.value"
           ]
         ],
         "period": 300,
         "stat": "Maximum",
         "region": "eu-west-1",
-        "title": "Total Sum of bank account"
+        "title": "Total number of persons checked"
       }
     }*/
   ]

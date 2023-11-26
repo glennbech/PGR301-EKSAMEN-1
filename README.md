@@ -29,6 +29,12 @@ vil responsen demonstrert i oppgaveteksten vises.
 
 ## Oppgave 4.
 
+Metrikkene jeg har valgt å utføre er:
+
+* Respons tiden til endpoint
+* Antall brudd på sikkerhetsutstyr
+* Antall personer sjekket
+
 
 ## Drøfte Oppgaver.
 
