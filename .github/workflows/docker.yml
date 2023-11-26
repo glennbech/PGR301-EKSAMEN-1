@@ -12,16 +12,16 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
         
-      - name: Build Docker Image
-        run: | 
+       - name: Build Docker Image
+        run: |
            docker build . -t 2039-ppe
-           
-      - name: Upload Docker Image
+           docker save -o /tmp/2039-ppe.tar 2039-ppe
+
+      - name: Upload Docker Image as Artifact
         uses: actions/upload-artifact@v2
         with:
           name: 2039-ppe
           path: /tmp/2039-ppe.tar
-          
           
   download_artifact:
     name: Download Artifact
