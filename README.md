@@ -56,7 +56,8 @@ konstant kan drøfte og evaluere om fremgangsmåten fungerer eller ikke, og gjø
 enn forutsett, kan poengene justeres opp.
 Fordeler med bruk av scrum i en utviklingsprosess er at den er veldig mottakelig mot endringer. I en utviklingsprosess kan priotiteter og ønsker endre seg fort, og da gir Scrum et godt utgangspunkt for dette.
 Når man jobber med større prosjekter kan det være vanskelig å vite hvor man skal starte og hvilke oppgaver man skal prioritere over andre. Planleggingen i scrum hjelper med å løse dette. I Backloggen så rangerer man de forskjellige oppgavene etter prioritet.
-Siden scrum fremmer kommunikasjon innad i team, og oppfordrer kreativ innputt, kan større team være utfordrende. Det blir vanskeligere å komme til enighet. 
+Siden scrum fremmer kommunikasjon innad i team, og oppfordrer kreativ innputt, kan større team være utfordrende. Det blir vanskeligere å komme til enighet. Vel å merke, kan fleksibiliteten i Scrum  være som en tveegget sverd. En udefinert sluttdato for utviklingen, og udefinerte krav, kan føre til problemer. Personlig fikk jeg oppleve dette under eksamen i Smidig Prosjekt, forrige semester.
+Ved udefinerte krav, er det en mulighet at produkteierene ikke helt vet hva de vil ha. Etterspurte endringer ble gjort, men ble senere takk dårlig imot. 
 
 
 #### DevOps
@@ -75,11 +76,17 @@ For å få god feedback for applikasjonen, tar man nytte av overvåkning, loggin
 
 **Kontinuerlig Forbedring** handler om å lære hele tiden. Lærer man litt hver dag i et år, når man ser tilbake har man lært en hel del. I organisasjoner som har DevOps integrert i kulturen, har noen av de til og med dedikerte dager for utviklere å forbedre sine ferdigheter og/eller lære nye.
 
-DevOps har flere fordeler. I den teknologisk utviklende verden som vi lever i, endres trender hyppig, og nye teknologier kommer på banen. DevOps gir organisasjoner fleksibiliteten til å ikke falle bak disse trendene. I Devops verden har de "Blitz Dager" som er dager hvor utviklerene jobber med å gjøre større endringer, som for eksempel å bytte ut en teknologi med potensielt ny og bedre teknologi.
+DevOps har flere fordeler. I den teknologisk utviklende verden som vi lever i, endres trender hyppig, og nye teknologier kommer på banen. DevOps gir organisasjoner fleksibiliteten til å ikke falle bak disse trendene. I Devops verden har de "Blitz Dager" som er dager hvor utviklerene jobber med å gjøre større endringer, som for eksempel å bytte ut en teknologi med potensielt ny og bedre teknologi. Ved å utnytte disse teknologiene man har i DevOps, minimerer det muligheten for menneskelige feil. Automatiserte tester f.eks. Hvis en tester skulle manuelt teste alle tjenesten etter en lang arbeidsdag, og plutselig glemte å teste en av tjenestene, som feilet. Ubevisst om dette pushet vedkommende kode og tjenesten blir utilgjengelig.
+
+Til tross for fordelene med Devops, kan det være utfordrende å implementere i en organisasjon. Det kreves en kulturell endring innad i organisasjonen. Devops tar i bruk mange forskjellige teknologier. Disse teknologiene må organisasjonen investere i. Ikke bare er det en finansiell kostnad. Men det koster tid. Arbeiderne i organisasjonen må ta seg tid til å lære seg å bruke disse teknologiene, og etter personlig erfaring vet jeg at det ikke skjer på en dag. Og dette samtidig som man må holde systemet sitt fungerende, og oppdatert med tidene.
 
 
 ### Scrum vs DevOps; Forskjeller og likheter
 
-DevOps og Scrum har både forskjeller og likheter når det kommer til utviklingsprosess. Begge søker etter å effektivisere utvikling. Men deres tilnærming til hvordan dette gjøres er forskjellige. Scrum fokuserer på Team kommunikasjon og interaksjon, 
+DevOps og Scrum har både forskjeller og likheter når det kommer til utviklingsprosess. Begge søker etter å effektivisere utvikling. Men deres tilnærming til hvordan dette gjøres er forskjellige. Scrum fokuserer på Team kommunikasjon og interaksjon, bygge verdier og god kultur for at teamet skal jobbe effektivt. Mens Devops har større fokus på automatisering av jobber og bruk av teknologi i i utviklingsprosessen for effektivitet. 
+
+Disse to konseptene, sett bort ifra sine forskjellige fremgangsmåter, har samme mål. De fokuserer på samarbeid, minimere hindringer, og kanskje viktigst; læring, for raskere produktlevering.
+
+Mens Scrum er en metodikk/verktøy et team kan bruke dersom det virker hensiktsmessig, blir DevOps ofte sett på mer som en kultur/ideologi innad i en organisasjon. For at Devops skal være effektivt, nytter det seg ikke at ett team bruker Devops og resten ikke gjør det. Devops er effektivt når organisasjonen som en enhet tar i bruk denne ideologien. Det er fullt mulig å kombinere disse to. Det kan avhengig av behov, være hensiktsmessig. Scrum definerer hvordan man kan løse et problem, mens DevOps gir oss midlene til å løse dette problemet.
 
 
