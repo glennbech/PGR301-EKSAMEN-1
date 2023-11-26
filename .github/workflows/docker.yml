@@ -16,6 +16,24 @@ jobs:
         run: | 
            docker build . -t 2039-ppe
            
+      - name: Upload Docker Image
+        uses: actions/upload-artifact@v2
+        with:
+          name: 2039-ppe
+          path: /tmp/2039-ppe.tar
+          
+          
+  download_artifact:
+  
+      - name: Download artifacts (Docker images) from previous workflows
+        uses: actions/download-artifact@v2
+
+      - name: Load Docker images from previous workflows
+        run: |
+          docker load --input tmp/2039.tar 
+
+      - run: docker image ls
+           
   push_to_registry:
     name: Push Docker image to ECR
     runs-on: ubuntu-latest
