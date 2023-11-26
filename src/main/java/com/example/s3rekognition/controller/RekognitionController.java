@@ -70,7 +70,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
                                     .withName(image.getKey())))
                     .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
                             .withMinConfidence(80f)
-                            .withRequiredEquipmentTypes("FACE_COVER"));
+                            .withRequiredEquipmentTypes("FACE_COVER", "HEAD_COVER"));
 
             DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
 
