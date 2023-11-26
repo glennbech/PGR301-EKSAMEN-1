@@ -24,7 +24,9 @@ jobs:
           
           
   download_artifact:
-  
+    name: Download Artifact
+    runs-on: ubuntu-latest
+    steps:
       - name: Download artifacts (Docker images) from previous workflows
         uses: actions/download-artifact@v2
 
