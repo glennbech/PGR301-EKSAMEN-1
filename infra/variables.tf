@@ -27,3 +27,9 @@ variable "candidate_number"{
     type = string
     default = "candidate_2039"
 }
+
+variable "alarm_email"{
+    type = string
+}
+
+
