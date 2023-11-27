@@ -33,7 +33,7 @@ public class MetricsConfig {
     private CloudWatchConfig setupCloudWatchConfig() {
         return new CloudWatchConfig() {
             private final Map<String, String> configuration = Map.of(
-                    "cloudwatch.namespace", "1027",
+                    "cloudwatch.namespace", "2039",
                     "cloudwatch.step", Duration.ofSeconds(5).toString()
             );
 
