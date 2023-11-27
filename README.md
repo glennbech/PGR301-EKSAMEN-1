@@ -6,8 +6,28 @@ genereres i AWS IAM (selv om sensor allerede vet det)**
 
 ## Oppgave 1.
 
+- [x] Workflow bygger SAM applikasjonen ved push til branches som ikke er main
+- [x] Workflow bygger og deployer Sam applikasjonen til S3 Bucket
+- [ ] Sam Applikasjonen deployes feilfritt til s3 Bucket
+
 
 ## Oppgave 2.
+A. Dockerfile
+- [x] Multi-stage Dockerfile som bygger prosjektet
+```
+FROM maven:3.8.4-openjdk-11 as builder
+
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn package
+
+FROM adoptopenjdk/openjdk11:alpine-slim
+COPY --from=builder /app/target/*.jar /app/application.jar
+ENTRYPOINT ["java","-jar","/app/application.jar"] 
+```
+I første steg av Dockerfilen kopieres pom.xml filen og src mappen og kjøren mvn package for å bygge applikasjonen en /app mappe
+videre kopieres application.jar filen som inneholder applikasjonen og Entrypoint til Docker image settes til å kjøre kommandoen java -jar <filepath>
 
 ```
 docker build -t ppe . 
@@ -21,8 +41,147 @@ http://localhost:8080/scan-ppe?bucketName=kjellsimagebucket
 ```
 vil responsen demonstrert i oppgaveteksten vises.
 
+B. Workflow
+- [x] Ved push til main bygges container image og publiseres til ECR repository
+- [x] Ved push til branch som ikke er main bygges container image, men publiseres ikke til AWS ECR
+- [x] Container image har tag som er lik commit hash i Git
+- [x] Siste pushet container image i ECR har :latest tag.
+<img width="252" alt="image" src="https://github.com/Mariusflores/PGR301-EKSAMEN/assets/89774644/79ede513-b018-45af-805f-7567c6f21837">
+
+``` 
+name: Build and Push Docker to ECR
+on:
+  push:
+    branches:
+      - main
+      - '*'
+jobs:
+  build:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+        
+      - name: Build Docker Image
+        run: |
+           docker build . -t 2039-ppe
+           docker save -o /tmp/2039-ppe.tar 2039-ppe
+
+      - name: Upload Docker Image as Artifact
+        if: github.ref == 'refs/heads/main'
+        # upload built Docker Image
+        uses: actions/upload-artifact@v2
+        with:
+          name: 2039-ppe
+          path: /tmp/2039-ppe.tar
+           
+  push_to_registry:
+    name: Push Docker image to ECR
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+        # Download Docker image from previous job
+      - name: Download artifacts (Docker images) from previous workflows
+        uses: actions/download-artifact@v2
+        with:
+          name: 2039-ppe
+          path: tmp  # Specify the path to download the artifact to
+        
+      - name: Push Docker image
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 244530008913.dkr.ecr.eu-west-1.amazonaws.com
+          rev=$(git rev-parse --short HEAD)
+          docker load --input tmp/2039-ppe.tar  # Correct the path to match the downloaded artifact
+          docker tag 2039-ppe 244530008913.dkr.ecr.eu-west-1.amazonaws.com/2039-ecr-repo:$rev
+          docker tag 2039-ppe 244530008913.dkr.ecr.eu-west-1.amazonaws.com/2039-ecr-repo:latest
+          docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/2039-ecr-repo:$rev
+          docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/2039-ecr-repo:latest
+          
+```
+
+Ved push til main, for å ikke bygger container image to ganger, utnyttet jeg github actions sin upload-artifact funksjon for å dele image over flere jobber.
+
+
+
 
 ## Oppgave 3.
+
+A. Kodeendringer of forbedringer
+ - [x] fjern hardkodingen av service name i main.tf
+ - [x] fjerne andre harkodede verdier 
+```
+variable "service_name"{
+    type = string
+    default = "apprunner-2039"
+}
+
+variable "image_identifier"{
+    type = string
+    default = "244530008913.dkr.ecr.eu-west-1.amazonaws.com/2039-ecr-repo"
+}
+
+variable "iam_role_name"{
+    type = string
+    default = "2039-role-thingy"
+}
+
+variable "policy_name"{
+    type = string
+    default = "2039-apr-policy-thingy"
+}
+
+variable "policy_description"{
+    type = string
+    default = "Policy for apprunner instance I think"
+}
+
+variable "candidate_number"{
+    type = string
+    default = "candidate_2039"
+} 
+```
+- [x] Endre cpu til 256 og memory til 1024
+```
+  instance_configuration {
+    instance_role_arn = aws_iam_role.role_for_apprunner_service.arn
+    cpu               = 256
+    memory            = 1024
+  }
+```
+
+- [x] Legge til Provider og Backend kode i Terraform
+
+```
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.26.0"
+    }
+  }
+ backend "s3" {
+    bucket = "pgr301-2021-terraform-state"
+    key    = "candidate-2039/s3-bucket.state"
+    region = "eu-north-1"
+ }
+}
+
+provider "aws"{
+  region="eu-west-1"
+}
+```
+
+B. Workflow
+
+- [x] docker.yml kjører terraform koden ved hver push til main
+- [ ] 
 
 
 
