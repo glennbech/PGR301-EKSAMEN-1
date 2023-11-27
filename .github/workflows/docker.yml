@@ -86,6 +86,5 @@ jobs:
         run: exit 1
 
       - name: Terraform Apply
-        run: |
-          terraform apply -var service_name=$SERVICE_NAME -var notfication_email=$NOTIFICATION_EMAIL --auto-approve 
+        run: terraform apply -var service_name=$SERVICE_NAME -var alarm_email=$NOTIFICATION_EMAIL --auto-approve 
         working-directory: ${{env.working-directory}}
