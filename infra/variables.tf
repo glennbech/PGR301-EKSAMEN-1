@@ -1,6 +1,5 @@
 variable "service_name"{
     type = string
-    default = "apprunner-2039"
 }
 
 variable "image_identifier"{
