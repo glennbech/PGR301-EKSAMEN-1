@@ -77,7 +77,7 @@ jobs:
         working-directory: ${{env.working-directory}}
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan -var "service_name=$SERVICE_NAME" -var "alarm_email=$NOTIFICATION_EMAIL" -no-color
         continue-on-error: true
         working-directory: ${{env.working-directory}}
 
