@@ -1,15 +1,15 @@
 resource "aws_cloudwatch_metric_alarm" "threshold" {
   alarm_name  = "${var.prefix}-threshold"
   namespace   = var.prefix
-  metric_name = "violations.count"
+  metric_name = "scan_latency.avg"
 
   comparison_operator = "GreaterThanThreshold"
   threshold           = var.threshold
   evaluation_periods  = "2"
   period              = "60"
-  statistic           = "Maximum"
+  statistic           = "Average"
 
-  alarm_description = "This alarm goes of when a number of violations "
+  alarm_description = "This alarm when  "
   alarm_actions     = [aws_sns_topic.user_updates.arn]
 }
 
