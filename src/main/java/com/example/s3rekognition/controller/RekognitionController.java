@@ -1,5 +1,5 @@
 package com.example.s3rekognition.controller;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import com.amazonaws.services.rekognition.AmazonRekognition;
 import com.amazonaws.services.rekognition.AmazonRekognitionClientBuilder;
 import com.amazonaws.services.rekognition.model.*;
@@ -31,6 +31,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
     private static final Logger logger = Logger.getLogger(RekognitionController.class.getName());
 
+    @Autowired
     public RekognitionController(MeterRegistry meterRegistry) {
         this.s3Client = AmazonS3ClientBuilder.standard().build();
         this.rekognitionClient = AmazonRekognitionClientBuilder.standard().build();
