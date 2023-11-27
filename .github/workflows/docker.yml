@@ -62,6 +62,8 @@ jobs:
     env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          NOTIFICATION_EMAIL: ${{ secrets.NOTIFICATION_EMAIL }}
+          SERVICE_NAME: ${{secrets.SERVICE_NAME}}
           working-directory: ./infra
     steps:
       - name: Checkout
@@ -84,5 +86,6 @@ jobs:
         run: exit 1
 
       - name: Terraform Apply
-        run: terraform apply --auto-approve
+        run: |
+          terraform apply -var service_name=$SERVICE_NAME -var notfication_email=$NOTIFICATION_EMAIL --auto-approve 
         working-directory: ${{env.working-directory}}
