@@ -6,6 +6,7 @@ Eksamen DevOps PGR301 - 2023. Kandidat 2039
 
 # Besvarelse
 
+Repository har Branch Protection Rule på main branch. Endringer til Main må gå via pull-request fra sub-branch.
 
 **!OBS! For at workflows skal kjøre korrekt i sensor sin fork må det opprettes 2 variabler: AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY. Dette gjøres ved**
 
@@ -18,6 +19,7 @@ Eksamen DevOps PGR301 - 2023. Kandidat 2039
 7. New Repository secret
 8. Secret: ```AWS_ACCESS_KEY_ID``` og tilsvarende verdi
 9. Secret: ```AWS_SECRET_ACCESS_KEY``` med tilsvarende verdi
+
 
 
 ## Oppgave 1.
