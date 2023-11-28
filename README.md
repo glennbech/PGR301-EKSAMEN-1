@@ -4,6 +4,8 @@ Eksamen DevOps PGR301 - 2023. Kandidat 2039
 [![Build and Deploy SAM](https://github.com/Mariusflores/PGR301-EKSAMEN/actions/workflows/sam_deploy.yml/badge.svg)](https://github.com/Mariusflores/PGR301-EKSAMEN/actions/workflows/sam_deploy.yml)
 [![Build and Push Docker to ECR](https://github.com/Mariusflores/PGR301-EKSAMEN/actions/workflows/docker.yml/badge.svg)](https://github.com/Mariusflores/PGR301-EKSAMEN/actions/workflows/docker.yml)
 
+# Besvarelse
+
 
 **!OBS! For at workflows skal kjøre korrekt i sensor sin fork må det opprettes 2 variabler: AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY. Dette gjøres ved**
 
@@ -313,8 +315,8 @@ Her møtte jeg på en hindring som jeg ennå ikke har fått løst. Metrics vises
 
 ### A. Kontinuerlig Integrering
 ##### Hva er Kontinuerlig Integrasjon?
-Kontinuerlig Intergrasjon(CI) er en praksis som er hyppig brukt innenfor DevOps området. Sammen med andre prakiser som
-Kontinuerlig Leveranse(CD), et mål om å optimalisere utrulling av kodeendringer til en applikasjon. Konseptet går ut på å jevnlig integrere nye kodeendringer i kodebasen, med sikte på å oppdage feil raskt og effektivt.
+Kontinuerlig Intergrasjon (CI) er en praksis som er hyppig brukt innenfor DevOps området. Sammen med andre prakiser som
+Kontinuerlig Leveranse (CD), et mål om å optimalisere utrulling av kodeendringer til en applikasjon. Konseptet går ut på å jevnlig integrere nye kodeendringer i kodebasen, med sikte på å oppdage feil raskt og effektivt.
 
 ##### Gjennomføring av Kontinuerlig Integrasjon
 
@@ -332,8 +334,8 @@ Kontinuerlig Integrasjon i praksis vil man ofte sette opp Branch Protection Rule
 
 #### Scrum
 ##### Hva er Scrum
-Scrum er Programvareutvikling metodikk som fremmer kommunikasjon mellom utviklere og produkteier. Scrum er hensiktsmessig dersom krav og kriterier for et produkt ikke er godt definert. Utviklingsteamet jobber i Sprints. En sprint vil i Scrum gå i rekkefølgen:  planlegge sprint -> jobbe med utvikling -> evaluering av sprint. Dette oppsettet gjør at teamet kommuniserer jevnlig og
-konstant kan drøfte og evaluere om fremgangsmåten var optimal eller ikke, og gjøre justeringer deretter. I Scrum har man en backlog som definerer kriterier for applikasjonen og disse gis poeng etter vanskelighetsgrad. Denne backloggen er åpen for endring, dersom en oppgave er for kompleks, kan man justere og dele den opp i flere mindre oppgaver, og om en oppgave viser seg å være mer kompleks enn forutsett, kan poengene justeres opp.
+Scrum er en programvareutviklings metodikk som fremmer kommunikasjon mellom utviklere og produkteier. Scrum er hensiktsmessig dersom krav og kriterier for et produkt ikke er godt definert. Utviklingsteamet jobber i Sprints. En sprint vil i Scrum gå i rekkefølgen:  planlegge sprint -> jobbe med utvikling -> evaluering av sprint. Dette oppsettet gjør at teamet kommuniserer jevnlig og
+konstant kan drøfte og evaluere om fremgangsmåten var optimal eller ikke, og gjøre justeringer deretter. I Scrum har man en backlog som definerer kriterier for applikasjonen og disse gis poeng etter grad av kompleksitet. Denne backloggen er fleksibel, dersom en oppgave er for kompleks, kan man justere og dele den opp i flere mindre oppgaver.
 
 ##### Fordeler og utfordringer med Scrum
 Fordeler med bruk av Scrum i en utviklingsprosess er at den er veldig mottakelig mot endringer. I en utviklingsprosess kan priotiteter og ønsker endre seg fort, og da gir Scrum et godt utgangspunkt for dette.
@@ -348,7 +350,7 @@ Udefinerte krav kan skape usikkerhet, spesielt hos produktutviklere. Det åpner 
 #### DevOps
 ##### Hva er DevOps
 
-DevOps er en metodikk som fremmer samarbeid mellom utviklere (Dev) og drift (Ops). Konseptet introduserer "Skin in the game" (G. Bech 2023), som betyr at begge parter deler ansvar og konsekvenser. Før DevOps arbeidet utviklere og drift isolert. Dette skapte utfordringer da disse to rollene ikke alltid var på samme side.
+DevOps er en metodikk som fremmer samarbeid mellom utviklere (Dev) og drift (Ops). Konseptet introduserer "Skin in the game", som betyr at begge parter deler ansvar og konsekvenser. Før DevOps arbeidet utviklere og drift isolert. Dette skapte utfordringer da disse to rollene ikke alltid var på samme side.
 
 Utviklere ønsker å skrive og distribuere kode så raskt som mulig, mens drift kan møte problemer hvis sikkerhetstiltak ikke er implementert før endringene lanseres. Når applikasjonen mislykkes, er det driftens ansvar å håndtere konsekvensene. Dette skapte et paradoks hvor utviklere hadde begrenset insentiv til å skrive bedre kode, da de ikke direkte opplevde konsekvensene av en dårlig ytelse.
 
@@ -364,7 +366,7 @@ Med DevOps blir dette paradokset adressert. Utviklere og driftsarbeidere samarbe
 * Løsning: Skalér tjenesten ut til å håndtere flere brukere.
 For å oppnå god feedback for applikasjonen, benytter man seg av overvåkning, logging og metrikker.
 
-*Kontinuerlig Forbedring* fokuserer på å lære hele tiden. En daglig læringsinnsats over et år resulterer i betydelig kompetansevekst. I organisasjoner som har integrert DevOps i kulturen, kan det til og med være dedikerte dager der utviklere jobber med å forbedre sine ferdigheter eller lære nye.
+*Kontinuerlig Forbedring* fokuserer ikke bare på forbedring av en applikasjon. Holde følge med nye endringer i Teknologi-verden. men også på forbedring av utviklerene. En daglig læringsinnsats over et år resulterer i betydelig kompetansevekst. I organisasjoner som har integrert DevOps i kulturen, kan det til og med være dedikerte dager der utviklere jobber med å forbedre sine ferdigheter eller lære nye.
 
 ##### Fordeler og utfordringer med DevOps
 DevOps bringer med seg flere fordeler. I den hurtigevolverende teknologiverden gir DevOps organisasjoner fleksibilitet til å holde tritt med endringer og adoptere nye teknologier. Noen organisasjoner i DevOps-verdenen har integrert "Blitz Dager". Disse dagene innebærer at utviklere jobber med større endringer, som å erstatte en eksisterende teknologi med en potensielt nyere og bedre løsning. 
@@ -412,7 +414,19 @@ Når det gjelder *ytelse*, er det essensielt å benytte seg av metrikker for å 
 5. Antall Samtidige Brukere vs. Responstid
    * Identifiserer potensielle begrensninger og hjelper med å skalere ressurser for å opprettholde god ytelse under belastning.
 
+*Feilhåndtering* er en kritisk del av å møte brukernes behov og sikre en pålitelig og feilfri opplevelse. Feedback om feil og problemer fra brukere eller systemovervåkning er avgjørende for kontinuerlig forbedring av feilhåndteringen. Teknikker som kan hjelpe oss med dette er å implementere gode logføringsrammeverk, og kontinuerlig overvåkning av tjenestene.
+
 #### Hvordan feedback bidrar til Kontinuerlig Forbedring
+
+Feedback spiller en viktig rolle for kontinuerlig forbedring gjennom hele utviklingslivssyklusen. I de tidlige stadiene av kravspesifikasjon og planlegging bidrar feedback til å avdekke potensielle utfordringer og muligheter, slik at justeringer og forbedringer kan gjøres. 
+
+Under utvikling og implementering muliggjør kontinuerlig integrasjon og leveranse (CI/CD) konstant tilbakemelding på kodekvalitet, feil og ytelse gjennom automatiserte tester og kodegjennomganger. Dette gir utviklerne muligheten til å rette feil umiddelbart og iterativt forbedre koden.
+
+I testing- og kvalitetssikringsfasen gir feedback fra forskjellige tester innsikt i styrker og svakheter i applikasjonen. Automatiserte tester og manuell testing gir konstant tilbakemelding, og endringer implementeres basert på testresultatene.
+
+Selv etter at produktet er implementert og i drift, spiller feedback en avgjørende rolle. Overvåking av systemets ytelse og bruk av loggfiler gir informasjon om potensielle begrensninger, feil og bruksmønstre. Denne innsikten muliggjør kontinuerlig optimalisering av applikasjonens stabilitet.
+
+Integrasjonen av feedback gjennom hele utviklingslivssyklusen muliggjør ikke bare feilretting, men også proaktiv tilpasning til endrede krav og forhold. Den iterative naturen av smidige og DevOps-metoder understreker viktigheten av å lytte til feedback for å oppnå kontinuerlig forbedring og levere verdifull programvare. Dette skaper en smidig utviklingsprosess der lærdommen fra tidligere faser blir en drivkraft for konstant forbedring gjennom hele livssyklusen til programvaren.
 
 
 
