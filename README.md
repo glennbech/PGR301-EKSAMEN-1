@@ -40,9 +40,7 @@ Properties:
 ```
  Fjernet koden over fra template.yaml da den ikke er nødvendig siden BucketName blir spesifisert via deploy kommandoen i workflow filen
 
-B.
-
-- [x] Workflow bygger SAM applikasjonen ved push til branches som ikke er main
+ - [x] Workflow bygger SAM applikasjonen ved push til branches som ikke er main
 - [x] Workflow bygger og deployer Sam applikasjonen til S3 Bucket feilfritt ved push til main branch
       
 ```
@@ -85,6 +83,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-candidate-2039 --s3-bucket candidate-2039 --capabilities CAPABILITY_IAM --region eu-west-1
 ```
+
 
 ## Oppgave 2.
 A. Dockerfile
